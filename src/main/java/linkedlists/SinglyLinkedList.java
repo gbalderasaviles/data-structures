@@ -1,5 +1,11 @@
 package linkedlists;
 
+/**
+ * A Singly Linked List implementation.
+ * @author Gabriel Balderas.
+ *
+ * @param <T> Makes the list generic.
+ */
 public class SinglyLinkedList<T> {
 
 	Node<T> head;
@@ -70,11 +76,12 @@ public class SinglyLinkedList<T> {
 	/**
 	 * Adds a node after the desired location.
 	 * @param item The contents of the Node after which the new Node will be added.
+	 * @param newItem
 	 */
-	public void addNodeAfter(T item) {
+	public void addNodeAfter(T item, T newItem) {
 		Node<T> tempNode = findNode(item);
 		if (tempNode != null) {
-			Node<T> newNode = new Node<>(item);
+			Node<T> newNode = new Node<>(newItem);
 			Node<T> oldNextNode = tempNode.getNextNode();
 			newNode.setNextNode(oldNextNode);
 			tempNode.setNextNode(newNode);
@@ -105,6 +112,18 @@ public class SinglyLinkedList<T> {
 			System.out.println("Node deleted.");
 		} else {
 			System.out.println("Node not found");
+		}
+	}
+	
+	/**
+	 * Displays Singly Linked List's contents.
+	 */
+	public void printList() {
+		Node<T> tempNode = head;
+		System.out.println(tempNode.getNodeItem());
+		while(tempNode.getNextNode() != null) {
+			tempNode = tempNode.getNextNode();
+			System.out.println(tempNode.getNodeItem());
 		}
 	}
 }

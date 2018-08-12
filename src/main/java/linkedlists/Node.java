@@ -1,9 +1,10 @@
 package linkedlists;
 
 /**
- * Node holding an object.
- * 
- * @author Gabriel Balderas
+ * A Node with a generic content and a pointer to the next node.
+ * @author Gabriel Balderas.
+ *
+ * @param <T> Makes the node generic.
  */
 public class Node<T> {
 
